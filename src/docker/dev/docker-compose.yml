@@ -1,0 +1,12 @@
+version: '3'
+services:
+  dev-web:
+    container_name: dev-web
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes: 
+      - ./../../../:/usr/src/app
+      - ./../../../../larry-identity-angular/dist/larry-identity-angular:/usr/src/app/node_modules/@monstermakes/larry-identity-angular
+    ports:
+      - 4200:4200
